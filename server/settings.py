@@ -92,12 +92,12 @@ DATABASES = {
     }
 }
 
-CACHES = {
-        "default": {
-            "BACKEND": "ginger.core.cache.backends.redis.RedisCache",
-            "LOCATION": "redis://redis:6379",
-        }
-    }
+# CACHES = {
+#         "default": {
+#             "BACKEND": "ginger.core.cache.backends.redis.RedisCache",
+#             "LOCATION": "redis://redis:6379",
+#         }
+#     }
 
 # Internationalization
 # https://docs.ginger.gloportal.dev/en/4.2/topics/i18n/
