@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('GINGER_SETTINGS_MODULE', 'server.settings')
+    os.environ.setdefault('GINGER_SETTINGS_MODULE', 'settings')
     try:
         from ginger.core.management import execute_from_command_line
     except ImportError as exc:

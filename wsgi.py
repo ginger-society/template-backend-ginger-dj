@@ -11,6 +11,6 @@ import os
 
 from ginger.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('GINGER_SETTINGS_MODULE', 'server.settings')
+os.environ.setdefault('GINGER_SETTINGS_MODULE', 'settings')
 
 application = get_wsgi_application()
