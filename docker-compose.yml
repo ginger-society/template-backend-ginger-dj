@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+    web:
+        container_name: ginger-dj-test
+        build:
+            context: .
+            dockerfile: ./dev-compose/Dockerfile
+        command: /bin/sh -c "while sleep 1000; do :; done"
+        ports:
+            - 8000:8000
+        environment:
+            - env=prod
+            - AWS_ACCESS_KEY_ID=SECRET
+            - AWS_SECRET_ACCESS_KEY=SECRET
+            - AWS_DEFAULT_REGION=us-west-2
+            - QUEUE_GROUP=dev
+            - DB_NAME=django_2
+            - DB_USERNAME=postgres
+            - DB_PASSWORD=postgres
+            - DB_HOST=db
+            - ALLOWED_HOSTS=localhost
+            - CSRF_TRUSTED_ORIGINS=http://localhost
+        volumes:
+            - ./:/app
+            - ~/.gitconfig:/etc/gitconfig
+            - ~/.ssh:/root/.ssh
+    prometheus:
+        image: prom/prometheus
+        restart: always
+        volumes:
+            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+            - ./prometheus_data:/prometheus
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+            - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+            - '--web.console.templates=/usr/share/prometheus/consoles'
+        ports:
+            - 9090:9090
+        depends_on:
+            - web
+
+    redis:
+        image: bitnami/redis:6.2.5
+        hostname: "fastapi_v1-redis"
+        restart: always
+        environment:
+            ALLOW_EMPTY_PASSWORD: "yes"
+        healthcheck:
+            test: redis-cli ping
+            interval: 1s
+            timeout: 3s
+            retries: 50
+        ports:
+            - 6379:6379

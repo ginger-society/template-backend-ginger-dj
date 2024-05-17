@@ -2,7 +2,7 @@
 URL configuration for server project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.ginger.gloportal.dev/en/4.2/topics/http/urls/
+    https://docs.gingersociety.org/ginger-dj/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -34,9 +34,12 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("swagger<format>/", schema_view.without_ui(cache_timeout=0), name="schema-json"),
-    path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
-    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
+    path("swagger<format>/", schema_view.without_ui(cache_timeout=0),
+         name="schema-json"),
+    path("swagger/", schema_view.with_ui("swagger",
+         cache_timeout=0), name="schema-swagger-ui"),
+    path("redoc/", schema_view.with_ui("redoc",
+         cache_timeout=0), name="schema-redoc"),
     path('admin/', admin.site.urls),
     path('test/', test_view),
     path('test2/', test_view2),
