@@ -11,6 +11,6 @@ import os
 
 from ginger.core.asgi import get_asgi_application
 
-os.environ.setdefault('GINGER_SETTINGS_MODULE', 'settings')
+os.environ.setdefault("GINGER_SETTINGS_MODULE", "server.settings")
 
 application = get_asgi_application()

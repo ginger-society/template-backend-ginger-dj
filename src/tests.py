@@ -1,11 +1,6 @@
-from ginger.test import TestCase
-
-# Create your tests here.
-"""tests for api_server"""
-import json
+"""tests for server"""
 
 from ginger.test import Client, TestCase
-
 
 client = Client()
 

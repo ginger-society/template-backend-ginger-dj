@@ -1,0 +1,84 @@
+repos:
+  - repo: https://github.com/jorisroovers/gitlint
+    rev:  v0.17.0
+    hooks:
+      - id: gitlint
+        always_run: true
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      # See https://pre-commit.com/hooks.html for more hooks
+      - id: check-ast
+      - id: check-case-conflict
+      # - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: ginger-test
+        name: ginger-test
+        entry: python manage.py test
+        always_run: true
+        pass_filenames: false
+        language: system
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+        args: ['-iii', '-ll']
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [
+            "flake8-bugbear",
+            "flake8-comprehensions",
+            "flake8-mutable",
+            "flake8-print",
+            "flake8-simplify",
+      ]
+  - repo: https://github.com/pycqa/pylint
+    rev: "v3.0.2"
+    hooks:
+      - id: pylint
+        exclude: "[a-zA-Z]*/(migrations)/(.)*"
+        # args: [ "--load-plugins=pylint_django", "--django-settings-module=server.settings" ]
+        additional_dependencies: [
+            # pylint dependency
+            pylint_django,
+            # runtime dependencies
+            ginger-dj==5.1,
+            pyyaml==6.0.1,
+            redis==4.5.5,
+            psycopg2-binary==2.9.5,
+            drf_yasg==1.21.6,
+            setuptools,
+            prometheus_client
+        ]
+
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/asottile/seed-isort-config
+    rev: v2.2.0
+    hooks:
+      - id: seed-isort-config
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+      - id: pyupgrade
+        args: [ "--py36-plus", "--py37-plus", "--py38-plus", "--py39-plus" ]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.42.1
+    hooks:
+    - id: commitizen
+      stages: [commit-msg]

@@ -4,7 +4,6 @@ from ginger.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("src", "0001_initial"),
     ]
@@ -81,9 +80,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "crossAppModel",
-                    models.ManyToManyField(
-                        related_name="cross_app_m2mtest", to="src.testappmodel1"
-                    ),
+                    models.ManyToManyField(related_name="cross_app_m2mtest", to="src.testappmodel1"),
                 ),
             ],
             options={
