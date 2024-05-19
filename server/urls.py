@@ -19,6 +19,7 @@ from ginger.drf_yasg import openapi
 from ginger.drf_yasg.views import get_schema_view
 from ginger.urls import include, path
 
+# pylint:disable=E0401
 from src.views import health_check_view, test_view, test_view2
 
 schema_view = get_schema_view(
