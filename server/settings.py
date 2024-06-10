@@ -15,7 +15,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,9 +56,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "server.wsgi.application"
 
 
-# Database
-# https://docs.ginger.gloportal.dev/en/4.2/ref/settings/#databases
-
 # DATABASES = {  # pragma: no cover
 #         "default": {
 #             "ENGINE": "ginger.db.backends.postgresql_psycopg2",
@@ -86,9 +82,6 @@ DATABASES = {
 #         }
 #     }
 
-# Internationalization
-# https://docs.ginger.gloportal.dev/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -97,13 +90,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.ginger.gloportal.dev/en/4.2/howto/static-files/
-
 STATIC_URL = "static/"
-
-# Default primary key field type
-# https://docs.ginger.gloportal.dev/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "ginger.db.models.BigAutoField"
