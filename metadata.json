@@ -1,0 +1,49 @@
+{
+  "version": "0.0.1",
+  "prompts": [
+    {
+      "type": "string",
+      "field_key": "name",
+      "prompt": "What is the name of this project",
+      "default": "DjangoAPI"
+    },
+    {
+      "type": "bool",
+      "field_key": "orm",
+      "default": "TRUE",
+      "prompt": "Do you want to enable DB access using ORM",
+      "callbacks": [
+        {
+          "condition": "TRUE",
+          "follow_up_prompts": [
+            {
+              "type": "enum",
+              "field_key": "kind",
+              "prompt": "Which ORM you want to use ?",
+              "enums": ["DjangoORM", "SQLAlchemy"]
+            }
+          ]
+        },
+        {
+          "condition": "FALSE",
+          "follow_up_prompts": [
+            {
+              "type": "bool",
+              "field_key": "service_based_package",
+              "prompt": "Which service you want to add ?",
+              "default": "FALSE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "string",
+      "field_key": "root_dir",
+      "prompt": "Where do you want to save this project ( default : current directory )",
+      "default": ".",
+      "is_required": true,
+      "enable_path_exist_validator": true
+    }
+  ]
+}
