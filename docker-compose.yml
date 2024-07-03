@@ -36,17 +36,3 @@ services:
             - 9090:9090
         depends_on:
             - web
-
-    redis:
-        image: bitnami/redis:6.2.5
-        hostname: "fastapi_v1-redis"
-        restart: always
-        environment:
-            ALLOW_EMPTY_PASSWORD: "yes"
-        healthcheck:
-            test: redis-cli ping
-            interval: 1s
-            timeout: 3s
-            retries: 50
-        ports:
-            - 6379:6379

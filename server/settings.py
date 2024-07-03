@@ -56,31 +56,23 @@ TEMPLATES = [
 WSGI_APPLICATION = "server.wsgi.application"
 
 
-# DATABASES = {  # pragma: no cover
-#         "default": {
-#             "ENGINE": "ginger.db.backends.postgresql_psycopg2",
-#             "NAME": 'test3',
-#             "USER": 'postgres',
-#             "PASSWORD": 'postgres',
-#             "HOST": 'localhost',
-#             "PORT": "5432",
-#         }
-#     }
-
-
-DATABASES = {
+DATABASES = {  # pragma: no cover
     "default": {
-        "ENGINE": "ginger.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
+        "ENGINE": "ginger.db.backends.postgresql_psycopg2",
+        "NAME": 'Test-db',
+        "USER": 'postgres',
+        "PASSWORD": 'postgres',
+        "HOST": 'localhost',
+        "PORT": "5432",
     }
 }
 
-# CACHES = {
-#         "default": {
-#             "BACKEND": "ginger.core.cache.backends.redis.RedisCache",
-#             "LOCATION": "redis://redis:6379",
-#         }
-#     }
+CACHES = {
+    "default": {
+        "BACKEND": "ginger.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://localhost:6379",
+    }
+}
 
 LANGUAGE_CODE = "en-us"
 

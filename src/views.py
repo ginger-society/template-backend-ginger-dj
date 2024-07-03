@@ -37,14 +37,14 @@ class TestReponseSerializer(serializers.Serializer):
 
 @swagger_auto_schema(method="GET", responses={200: openapi.Response("testResponse", TestReponseSerializer)}, security=[{"Bearer": []}])
 @api_view(["GET"])
-def test_view2():
+def test_view2(request):
     """Test view"""
     requests_total.labels(endpoint="Test view 2", method=test_view2, user=None).inc()
     return JsonResponse({"text": "Just rendering some JSON :)"})
 
 
 @cache_page(10)
-def health_check_view():
+def health_check_view(request):
     """Server health check request handler"""
     requests_total.labels(endpoint="Health check", method=health_check_view, user=None).inc()
     now = datetime.now()
