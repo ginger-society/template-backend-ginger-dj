@@ -1,18 +1,15 @@
+## 0.4.0-nightly.0 - 2024-07-04
+feat:
+ - [8133eb8f83](8133eb8f831838b2028a7b0d5ee2225964971b87) (Ginger Society Admin) feat: added crud for student model
+	
 ## 0.3.0-nightly.0 - 2024-07-04
+chore:
+ - [917f05f2b6](917f05f2b613de7b7746b71f57f1ac264e02e368) (Ginger Society Admin) chore: version bump to 0.3.0-nightly.0
+	
 feat:
  - [4147447740](4147447740926afa96a4c1c764da61c9908e00b2) (Ginger Society Admin) feat: added db support
 	
 ## 0.2.0-nightly.0 - 2024-07-03
-refactored
- - [666c340791](666c340791c9bc8943556bb1cb450dd5440de6a5) (Ginger Society Admin) refactored template for flatter file hirarchy
-	
-chore:
- - [d98e71f488](d98e71f488bc477b67b3c31cd11810eee2a42a78) (Ginger Society Admin) chore: version bump to 0.2.0-nightly.0
-	
- - [1d9fa8897a](1d9fa8897a360aef18ebce0a2f7f335d529c7e87) (Ginger Society Admin) chore: .gitignore update
-	
- - [c038e2c121](c038e2c121f580760c493da0d1b8ceed0f133c0e) (Ginger Society Admin) chore: first commit
-	
 feat:
  - [ac03249ebe](ac03249ebe28aa2bd810f4eb8e373d1987375a05) (Ginger Society Admin) feat: added releaser support
 	
@@ -28,10 +25,20 @@ feat:
 	
  - [1b6a431f41](1b6a431f418fffaabbaaabd82f6b66f43a34e421) (Ginger Society Admin) feat: added dev container support
 	
+chore:
+ - [d98e71f488](d98e71f488bc477b67b3c31cd11810eee2a42a78) (Ginger Society Admin) chore: version bump to 0.2.0-nightly.0
+	
+ - [1d9fa8897a](1d9fa8897a360aef18ebce0a2f7f335d529c7e87) (Ginger Society Admin) chore: .gitignore update
+	
+ - [c038e2c121](c038e2c121f580760c493da0d1b8ceed0f133c0e) (Ginger Society Admin) chore: first commit
+	
 fix:
  - [84d2e5f465](84d2e5f46575f16284b934b098c78a930a9893f9) (Ginger Society Admin) fix: gitignore
 	
  - [b1970eaf3b](b1970eaf3b0648950cedb7225bd5633e5ab13542) (Ginger Society Admin) fix: commented redis config
+	
+refactored
+ - [666c340791](666c340791c9bc8943556bb1cb450dd5440de6a5) (Ginger Society Admin) refactored template for flatter file hirarchy
 	
 added
  - [02255ce88b](02255ce88bfcaceadf81d435afe5a497d9631612) (Ginger Society Admin) added git ignore
