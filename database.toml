@@ -1,0 +1,8 @@
+[schema]
+lang = "Python"
+orm = "DjangoORM"
+root = "src"
+url = "http://localhost:8000"
+
+[tables]
+names = ["student", "enrollment", "course", "exam"]
